@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đ cinestar - Đặt vé xem phim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-icon">Đ</span>
+            <span>CINE<span class="red">STAR</span></span>
+        </a>
+
+        <nav class="nav">
+            <a href="#home">TRANG CHỦ</a>
+            <a href="#movies">PHIM</a>
+            <a href="#schedule">LỊCH CHIẾU</a>
+            <a href="#offers">ƯU ĐÃI</a>
+        </nav>
+
+        <div class="header-right">
+            <input type="text" id="searchInput"
+                   placeholder="Tìm tên phim...">
+            <button class="login-btn" onclick="login()">Đăng nhập</button>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">TRẢI NGHIỆM ĐIỆN ẢNH ĐỈNH CAO</span>
+            <h1>THẾ GIỚI<br><span>ĐIỆN ẢNH</span></h1>
+            <p>
+                Khám phá những bộ phim hấp dẫn nhất.
+                Đặt vé nhanh chóng, chọn ghế yêu thích
+                và tận hưởng khoảnh khắc tuyệt vời.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#movies" class="btn-red">KHÁM PHÁ PHIM</a>
+                <a href="#schedule" class="btn-outline">LỊCH CHIẾU</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOVIE SECTION -->
+    <main class="container" id="movies">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-title">MOVIE COLLECTION</p>
+                <h2>PHIM ĐANG CHIẾU</h2>
+            </div>
+            <div class="movie-tabs">
+                <button class="tab active" data-filter="now">
+                    Đang chiếu
+                </button>
+                <button class="tab" data-filter="soon">
+                    Sắp chiếu
+                </button>
+            </div>
+        </div>
+
+        <div class="movie-grid" id="movieGrid">
+
+            <!-- PHIM 1 -->
+            <article class="movie-card"
+                     data-name="hanh tinh bi an"
+                     data-status="now">
+                <div class="poster">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=600&q=85"
+                         alt="Hành Tinh Bí Ẩn">
+                    <span class="age">T16</span>
+                    <span class="movie-status">ĐANG CHIẾU</span>
+                    <button class="quick-buy"
+                            onclick="buyTicket('Hành Tinh Bí Ẩn')">
+                        MUA VÉ NGAY
+                    </button>
+                </div>
+                <div class="movie-info">
+                    <h3>Hành Tinh Bí Ẩn</h3>
+                    <p>Phiêu lưu · Khoa học viễn tưởng</p>
+                    <div class="movie-bottom">
+                        <span>★ 8.8/10</span>
+                        <button onclick="buyTicket('Hành Tinh Bí Ẩn')">
+                            MUA VÉ
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PHIM 2 -->
+            <article class="movie-card"
+                     data-name="dem kinh hoang"
+                     data-status="now">
+                <div class="poster">
+                    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=600&q=85"
+                         alt="Đêm Kinh Hoàng">
+                    <span class="age">T18</span>
+                    <span class="movie-status">ĐANG CHIẾU</span>
+                    <button class="quick-buy"
+                            onclick="buyTicket('Đêm Kinh Hoàng')">
+                        MUA VÉ NGAY
+                    </button>
+                </div>
+                <div class="movie-info">
+                    <h3>Đêm Kinh Hoàng</h3>
+                    <p>Kinh dị · Bí ẩn</p>
+                    <div class="movie-bottom">
+                        <span>★ 8.2/10</span>
+                        <button onclick="buyTicket('Đêm Kinh Hoàng')">
+                            MUA VÉ
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PHIM 3 -->
+            <article class="movie-card"
+                     data-name="cuoc dua cuoi cung"
+                     data-status="now">
+                <div class="poster">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=85"
+                         alt="Cuộc Đua Cuối Cùng">
+                    <span class="age">T13</span>
+                    <span class="movie-status">ĐANG CHIẾU</span>
+                    <button class="quick-buy"
+                            onclick="buyTicket('Cuộc Đua Cuối Cùng')">
+                        MUA VÉ NGAY
+                    </button>
+                </div>
+                <div class="movie-info">
+                    <h3>Cuộc Đua Cuối Cùng</h3>
+                    <p>Hành động · Phiêu lưu</p>
+                    <div class="movie-bottom">
+                        <span>★ 8.5/10</span>
+                        <button onclick="buyTicket('Cuộc Đua Cuối Cùng')">
+                            MUA VÉ
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PHIM 4 -->
+            <article class="movie-card"
+                     data-name="thanh pho tuong lai"
+                     data-status="soon">
+                <div class="poster">
+                    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=85"
+                         alt="Thành Phố Tương Lai">
+                    <span class="age">T13</span>
+                    <span class="movie-status coming">SẮP CHIẾU</span>
+                    <button class="quick-buy"
+                            onclick="buyTicket('Thành Phố Tương Lai')">
+                        XEM THÔNG TIN
+                    </button>
+                </div>
+                <div class="movie-info">
+                    <h3>Thành Phố Tương Lai</h3>
+                    <p>Khoa học viễn tưởng · Hành động</p>
+                    <div class="movie-bottom">
+                        <span>★ 9.0/10</span>
+                        <button onclick="buyTicket('Thành Phố Tương Lai')">
+                            CHI TIẾT
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage">
+            Không tìm thấy phim phù hợp.
+        </p>
+    </main>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking-section" id="schedule">
+        <div class="booking-content">
+            <div>
+                <p class="small-title">BOOK YOUR TICKET</p>
+                <h2>ĐẶT VÉ NHANH CHÓNG</h2>
+                <p>Chọn rạp, ngày xem và suất chiếu yêu thích.</p>
+            </div>
+
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="cinema">Chọn rạp</label>
+                    <select id="cinema">
+                        <option value="">-- Chọn rạp --</option>
+                        <option>CineStar Quốc Thanh</option>
+                        <option>CineStar Hai Bà Trưng</option>
+                        <option>CineStar Đà Lạt</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="movieSelect">Chọn phim</label>
+                    <select id="movieSelect">
+                        <option>Hành Tinh Bí Ẩn</option>
+                        <option>Đêm Kinh Hoàng</option>
+                        <option>Cuộc Đua Cuối Cùng</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="showDate">Ngày xem</label>
+                    <input type="date" id="showDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="showTime">Suất chiếu</label>
+                    <select id="showTime">
+                        <option>09:00</option>
+                        <option>11:30</option>
+                        <option>14:00</option>
+                        <option>17:30</option>
+                        <option>20:00</option>
+                    </select>
+                </div>
+
+                <button class="btn-red booking-btn"
+                        onclick="confirmBooking()">
+                    TÌM SUẤT CHIẾU
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="offers container" id="offers">
+        <div class="section-heading">
+            <div>
+                <p class="small-title">SPECIAL OFFERS</p>
+                <h2>ƯU ĐÃI ĐIỆN ẢNH</h2>
+            </div>
+        </div>
+
+        <div class="offer-grid">
+            <div class="offer-card">
+                <div class="offer-icon">🎟️</div>
+                <h3>Ưu đãi vé xem phim</h3>
+                <p>Khám phá các chương trình ưu đãi dành cho khách hàng.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">🍿</div>
+                <h3>Combo bắp nước</h3>
+                <p>Thưởng thức phim cùng bắp rang và nước uống yêu thích.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">⭐</div>
+                <h3>Thành viên điện ảnh</h3>
+                <p>Tích điểm và khám phá các quyền lợi thành viên.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#" class="logo">
+            <span class="logo-icon">Đ</span>
+            <span>CINE<span class="red">STAR</span></span>
+        </a>
+        <p>Website mô phỏng đặt vé xem phim phục vụ mục đích học tập.</p>
+        <p>© 2026 CineStar Movie Website</p>
+        <p> # NGUYEN PHUONG DAT 231A010580 </p>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <p class="small-title">CINESTAR TICKETS</p>
+            <h2 id="modalTitle">Thông tin đặt vé</h2>
+            <div id="modalBody"></div>
+            <button class="btn-red modal-action" onclick="closeModal()">
+                ĐÓNG
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+// bài tập 
+
+<div class="card p-4 mb-4">
+    <h2 class="h4 fw-bold mb-3">Bài tập đã làm</h2>
+    
+    <!-- Bài tập 37 -->
+    <div class="mb-3">
+        <h3 class="h5 fw-bold">Bài tập 37</h3>
+        <p class="mb-0">
+            <a href="#" class="text-decoration-underline me-3">Xem ảnh 1</a>
+            <a href="#" class="text-decoration-underline">Xem ảnh 2</a>
+        </p>
+    </div>
+
+    <!-- Bài tập 38 -->
+    <div class="mb-3">
+        <h3 class="h5 fw-bold">Bài tập 38</h3>
+        <p class="mb-0">
+            <a href="#" class="text-decoration-underline me-3">Xem ảnh 1</a>
+            <a href="#" class="text-decoration-underline">Xem ảnh 2</a>
+        </p>
+    </div>
+
+    <!-- Bài tập 39 -->
+    <div class="mb-3">
+        <h3 class="h5 fw-bold">Bài tập 39</h3>
+        <p class="mb-0">
+            <a href="#" class="text-decoration-underline">Xem bài 39</a>
+        </p>
+    </div>
+
+    <!-- Bài tập 40 (Mẫu thêm mới giống hệt) -->
+    <div class="mb-3">
+        <h3 class="h5 fw-bold">Bài tập 40</h3>
+        <p class="mb-0">
+            <a href="#" class="text-decoration-underline me-3">Xem ảnh 1</a>
+            <a href="#" class="text-decoration-underline">Xem ảnh 2</a>
+        </p>
+    </div>
+</div>
